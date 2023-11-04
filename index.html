@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vault Breaker Game</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Vault Breaker Game</h1>
+        <img src = "https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/78160/safe-clipart-md.png" style = "width: 270px; height: 275px;">
+        <p>Crack the 3-digit code in 7 turns!</p>
+        <p id="clock">Turns Left: 7</p>
+       
+        <div>
+            <button id="num1" onclick="addToGuess(1)">1</button>
+            <button id="num2" onclick="addToGuess(2)">2</button>
+            <button id="num3" onclick="addToGuess(3)">3</button>
+        </div>
+        
+        <div>
+            <button id="clear" onclick="clearGuess()">Clear</button>
+        </div>
+        
+        <div>
+            <input id="guess" type="text" readonly>
+        </div>
+        <!-- Modal for You Win -->
+        <div id="youWinModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('youWinModal')">&times;</span>
+                <h2>Congratulations!</h2>
+                <p>You cracked the vault!</p>
+                <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/79292/open-vault-clipart-md.png" alt="Vault opened!" style="width: 100px; height: auto;">
+            </div>
+        </div>
+        <!-- Modal for You Lose -->
+        <div id="youLoseModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('youLoseModal')">&times;</span>
+                <h2>Game Over</h2>
+                <p>Sorry, you didn't crack the vault this time.</p>
+                <p id="secretCodeDisplay"></p> 
+                <img src="https://content.presentermedia.com/files/clipart/00020000/20228/figure_arrested_police_800_wht.jpg" alt="Vault closed!" style="width: 100px; height: auto;">
+            </div>
+        </div>
+        <div id="log"></div> <!-- The log element -->
+        <div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
